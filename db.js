@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongo://<username>:<password>@<container-name>2701//', 
+        await mongoose.connect('mongodb://root:example@db:27017/', 
         { useNewUrlParser: true, 
             useUnifiedTopology: true })
 
-        console.log("MonogoDB Connected")
+        console.log("MongoDB Connected")
 
     } catch (error) {
         console.error(error.message);
@@ -14,4 +14,5 @@ const connectDB = async () => {
     }
 }
 
+module.exports = connectDB
 module.exports = connectDB
