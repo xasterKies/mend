@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema(
     {
         name: {
-            type: stringify,
+            type: String,
             required: true
         },
         price: {
