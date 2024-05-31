@@ -38,16 +38,15 @@ app.post('/product', async (req, res) => {
     const { name, price, quantity } = req.body;
 
     try {
-        const newProduct = new Product({
+
+        const product = await newProduct({
             name,
             price,
             quantity
-        });
-
-        const product = await newProduct.save();
-        res.json(product);
+        })
+        await product.save()
+        res.json({success: true});
     } catch (err) {
-        console.error(err.message);
         res.status(500).send('Server Error');
     }
 });
